@@ -51,7 +51,7 @@ right: 16%;
   transform: translate(0 ,-50%);
 }
 
-.dropdown-content {
+div.dropdown-content {
   display: none;
   position: absolute;
   background-color: #6ACA6B; ;
@@ -61,7 +61,7 @@ right: 16%;
   padding: 1em;
 }
 
-.dropdown:hover .dropdown-content {
+div.dropdown:hover .dropdown-content {
   display: block;
 }
 
