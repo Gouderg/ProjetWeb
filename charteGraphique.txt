@@ -4,5 +4,15 @@ Typographie: Arial, Helvetica, sans-serif
 
 Couleurs principales: Blanc, Noir, #6ACA6B
 
-Taille des titres: h1 à h4
+Taille des titres: h1 à h5 en noir
+
+Bouton: Fond Noir et écritude blanche
+
+Texte: Couleur #6ACA6B avec une opacité de 75%
+
+Photo: normal sans ajout
+
+Header/Footer: couleur en #282828
+
+
 
