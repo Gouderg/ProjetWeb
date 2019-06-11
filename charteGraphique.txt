@@ -1,0 +1,8 @@
+Logo : Un logo pour fond foncé(écriture blanche). Un logo pour fond clair(écriture noire).
+
+Typographie: Arial, Helvetica, sans-serif
+
+Couleurs principales: Blanc, Noir, #6ACA6B
+
+Taille des titres: h1 à h4
+

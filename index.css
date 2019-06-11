@@ -1,0 +1,174 @@
+body
+{
+	background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Header et footer*/
+
+header, footer {
+	background-color: #282828;
+	position: relative;
+
+}
+
+#menu{
+width:  20px;
+position: absolute;
+top: 15%;
+right: 16%;
+}
+
+#localisation{
+	width: 3%;
+	position: absolute;
+	top: 22%;
+	left: 12%;
+
+}
+#bretagne{
+	position: absolute;
+	top: 20%;
+	width: 9%;
+	
+}
+
+#devise{
+	position: absolute;
+	top: 16%;
+	left: 40%;
+	font-style: italic;
+	color: #B2B2B2;
+
+}
+
+
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  right : 20%;
+  top: 50%;
+  transform: translate(0 ,-50%);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #6ACA6B; ;
+  min-width: 160px;
+  top : 50px;
+  z-index: 1;
+  padding: 1em;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+img#facebook{
+	position: absolute;
+	margin-top:  0.5%;
+	width: 0.5%;
+	left: 45%;
+}
+
+img#twitter{
+	position: absolute;
+	margin-top: 0.7%;
+	width: 1%;
+	left: 43%
+}
+
+img#linkedin{
+	position: absolute;
+	width: 1%;
+	margin-top: 0.6%;
+	left: 41%;
+}
+img#Logo{
+	width: 5%;
+}
+
+p#Quifoot, p#MentionFoot, p#Contactfoot{
+	color: #B2B2B2;
+	position: absolute;
+	top: 10%;
+	right: 30%;
+}
+
+p#MentionFoot, p#Contactfoot{
+
+	top: 55%;
+	right: 31%;
+}
+
+p#Contactfoot{
+
+	right: 15%;
+}
+
+/*Carousel*/
+
+form#saisie
+{
+	background-color: #6ACA6B;
+	text-align: center;
+	padding: 2em;
+	font-size: 130%;
+
+}
+
+button#recherche
+{
+	background-color: black;
+	color: white;
+	size: 130%;
+}
+
+div#slider 
+{
+	width: 80%;
+	max-width: 630px;
+	overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div#slider figure{
+	position: relative;
+	width: 400%;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	animation: 30s slidy infinite;
+}
+
+div#slider figure img
+{
+	width: 25%;
+	height: auto;
+}
+
+@keyframes slidy
+{
+	0% {left: 0%; }
+	20% {left: 0%; }
+	25% {left: -100%; }
+	45% {left: -100%; }
+	50% {left: -200%; }
+	70% {left: -200%; }
+	75% {left: -300%; }
+	95% {left: -300%; }
+	100% {left: -400%; }
+}
+
+button#coeur
+{
+	background-color: #6ACA6B;
+	font-size: 130%;
+	color: white;
+	margin-right: auto;
+}
+
+
+
