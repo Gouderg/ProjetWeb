@@ -1,53 +1,46 @@
-var type, ville,url;
+$( "#recherche" ).click(function() {
+  
+  var villeSelect = $( "#ville  option:selected" ).val();
+  var typeSelect = $( "#type  option:selected" ).val();
+  var base_url = 'http://ville.api.isen-ouest.fr/immo/list/ville/'+villeSelect+'/type/'+typeSelect;
+  
+  console.log(base_url);
 
-function temp() {
-	ville = document.getElementById("ville").value;
-	type = document.getElementById("type").value;
-	url = "http://ville.api.isen-ouest.fr/immo/list/ville/"+ville+"/type/"+type;
-	location.href="rechercheGlobal.html";
-	
-	miseajour(url);
-	
-}
+    var response = "";
+    var valresult = '';
+    var photo = '';
 
-function clearTableau(){
-	var tbody = document.getElementById('tableBody');
+    $.ajax({
+        type: "GET", 
+        url: base_url , 
+        //data: form_data,
+        dataType: "json",//set to JSON
+        success: function(response)
+        {
+          
+      jQuery.each( response, function( i, val ) {
 
-	while (tbody.firstChild) {
-		tbody.removeChild(tbody.firstChild);
-	}
+        valresult += '<tr><th><img class="photo" src = "http://172.31.0.5/immo/images/' + val.id + '-0.jpg" alt = "maison"></th>'; 
+        valresult += '<td>Rue : ' + val.numero + '<br> Prix : '+ val.prix + '</td></tr>';
+        
+         
+      });
+      console.log(photo);     
+      $(".niv1").html(valresult);
+      
+        }    
+      
+    }) 
+});
 
-}
 
-
-function recup(json) {
-	console.log("lol");
-	console.log(json);
-	clearTableau();
-
-}
-
-
-function miseajour(url) {
-
-	console.log("MAJ" + url);
-
-	fetch(url, {
-		method : 'GET'
-	})
-	.then( (res) => res.json())
-	.then( (json) => recup(json))
-
-	console.log("bonswar");
-
-}
+$(document).ready(function() {
+       
+})
 
 
 
-
-
-
-/*//Code Js pour le swipe dans Recherche précise
+//Code Js pour le swipe dans Recherche précise
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -76,4 +69,78 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   console.log(slideIndex)
-} */
+}
+
+//mailto
+function soummision(){
+  var nom = document.getElementById('position1').value;
+  var prenom = document.getElementById('position2').value;
+  var adresse=document.getElementById('position3').value;
+  var ville =document.getElementById('position4').value;
+  var mail = document.getElementById('position5').value;
+  var message =document.getElementById('position6').value;
+    if(nom=="")
+    {
+      
+      document.getElementById('position1').focus;
+      return false;
+
+        
+    }
+    if(prenom == ""){
+    
+      document.getElementById('position2').focus;
+      return false;
+    }
+    if(adresse == ""){
+    
+      document.getElementById('position3').focus;
+      return false;
+    }
+    if(ville == ""){
+    
+      document.getElementById('position4').focus;
+      return false;
+    }
+     if (mail == ""){
+      
+      document.getElementById('position5').focus;
+      return false;
+    }
+     if (message == ""){
+      
+      document.getElementById('position6').focus;
+      return false;
+    }
+    else{
+      return true;
+      }
+}
+
+//contact
+function soumettre(){
+  var nom = document.getElementById('nom').value;
+  var prenom = document.getElementById('prenom').value;
+  var mail = document.getElementById('mail').value;
+    if(nom=="")
+    {
+      
+      document.getElementById('champs').focus;
+      return false;
+
+        
+    }
+    if(prenom == ""){
+    
+      document.getElementById('nom').focus;
+      return false;
+    }
+     if (mail == ""){
+      
+      document.getElementById('mail').focus;
+      return false;
+    }
+    else{
+      return true;
+      }
+} 

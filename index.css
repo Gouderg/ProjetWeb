@@ -125,6 +125,12 @@ p#Contactfoot {
 
 /*Index*/
 
+img.photo {
+	width: 20%;
+	border-radius: 0.2%;
+	border: solid 1px #6ACA6B;
+}
+
 div#saisie {
 	background-color: #6ACA6B;
 	text-align: center;
@@ -184,28 +190,6 @@ h2 {
 	text-align: center;
 	color: #282828;
 	font-weight: bold;
-}
-
-/*recherche Global*/
-th > * {
-	width: 75%;
-}
-
-tr > * {
-	padding: 2em;
-	border-top: solid 1px black;
-	border-bottom: solid 1px black;
-	
-}
-
-table {
-	border-collapse: collapse;
-}
-
-h5, p.description {
-	color: #6ACA6B;
-	opacity: 75%;
-
 }
 
 /*recherche precise*/
@@ -285,25 +269,40 @@ p#interesser {
 }
 
 /*contact*/
-.vertical {
-	border-left: 2px solid black;
-  	height: 500px;
- 	position: absolute;
-  	left: 50%;
-  	margin-left: -3px;
-	top: 50%;
-}
-
 #infosperso {
 	position: absolute;
 	right: 20%;
-	top: 50%;
+	top: 30%;
 }
 
-#bordureverticale {
-	height: 200px;
-	padding-right: 60px;
-	border-right: 1px solid black;
+
+
+#content {
+	display: flex;
+	position: relative;
+	flex-direction:row;
+	min-height: 80vh;
+}
+
+#content > * {
+	flex:1;
+}
+
+#content .col {
+	padding: 10px;
+
+}
+
+#content .col + .col:before {
+content:"";
+width: 1px;
+height:300px;
+background-color:black;
+display: block;
+position:absolute;
+margin-left:-10px;
+top:50%;
+transform: translate(0,-50%);
 }
 
 /* Envoie Mail */

@@ -3,7 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="index.css">
-	<script type="text/javascript" src="index.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	
+
 	<title>Accueil</title>
 </head>
 <body>
@@ -47,12 +49,17 @@
 			<option value="rennes">Rennes</option>
 		</select>
 	
-		<button id="recherche" onclick="temp()">Rechercher</button>
+		<button type="button" id="recherche">Rechercher</button>
+
 	</div>
 
-	
-	
+	<table>
+		<tbody class="niv1">
+			
+		</tbody>
+	</table>
 
+	
 	<div id="slider">
 		<h2>Nos Coups de Coeurs</h2>
 		<figure>
@@ -61,9 +68,11 @@
 			<img src="image/maison1.jpg" alt="maison3">
 			<img src="image/maison1.jpg" alt="maison4">
 		</figure>
-		
+						
 		<button id="coeur">Visiter!</button> <br><br>
 	</div>
+			
+	
 
 		
 
@@ -92,5 +101,6 @@
 		<p id="Copyrights">Copyrights FIVER 2019. Tous droits réservés</p>
 	</footer>
 
+<script type="text/javascript" src="index.js" ></script>
 </body>
 </html>
