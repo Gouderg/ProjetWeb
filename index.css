@@ -119,9 +119,13 @@ p#Contactfoot {
 	top: 55%;
 }
 
+#contenu{
+ 	height: 500px;
+ }
+
 /*Index*/
 
-form#saisie {
+div#saisie {
 	background-color: #6ACA6B;
 	text-align: center;
 	padding: 2em;
@@ -287,13 +291,13 @@ p#interesser {
  	position: absolute;
   	left: 50%;
   	margin-left: -3px;
-	top: 30%;
+	top: 50%;
 }
 
 #infosperso {
 	position: absolute;
-	right: 30%;
-	top: 30%;
+	right: 20%;
+	top: 50%;
 }
 
 #bordureverticale {
@@ -302,4 +306,139 @@ p#interesser {
 	border-right: 1px solid black;
 }
 
+/* Envoie Mail */
+
+#positiontitre{
+	position: absolute;
+	top:28%;
+	left: 10%;
+}
+
+#positiontitre2{
+	position: absolute;
+	top: 28%;
+	right: 30%;
+}
+
+#position1{
+	height: 4%;
+	position: absolute;
+	top: 40%;
+	left: 10%;
+	border-radius: 10px;
+}
+#position2{
+	height: 4%;
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	border-radius: 10px;
+
+}
+
+#position3{
+	height: 4%;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	border-radius: 10px;
+}
+
+#position4{
+	height: 4%;
+	position: absolute;
+	top: 50%;
+	left: 35%;
+	border-radius: 10px;
+
+}
+
+#position5{
+	height:4%;
+	position: absolute;
+	top:  60%;
+	left: 10%;
+	border-radius: 10px;
+}
+
+#position6{
+	border-radius: 20px;
+	position: absolute;
+	top: 60%;
+	left : 33%;
+}
+
+#position7{
+	position:  absolute;
+	color: white;
+	width: 11%;
+	background-color: #B2B2B2;
+	left: 15%;
+	top: 80%;
+	border-radius: 10px;
+}
+
+#position8{
+	border-radius: 20px;
+	height: 4%;
+	position: absolute;
+	top: 70%;
+	left : 10%;
+}
+
+/*Qui sommes-nous*/
+
+#rond{
+	position:  absolute;
+	top: 50%;
+	left: 45%;
+	border-radius: 50%;
+	width:160px;
+  height:160px;
+	 background:white;
+	 border:2px solid black; 
+}
+#rond2{
+	position:  absolute;
+	top: 50%;
+	left:20%;
+	border-radius: 50%;
+	width:160px;
+  height:160px;
+	 background:white;
+	 border:2px solid black; 
+}
+#rond3{
+	position:  absolute;
+	top: 50%;
+	right: 20%;
+	border-radius: 50%;
+	width:160px;
+  height:160px;
+	 background:white;
+	 border:2px solid black; 
+}
+
+.avatar{
+	position: absolute;
+	left: 14%;
+	top: 10%;
+	width: 70%;
+	border-radius: 50%;
+	}
+
+
+#user1, #user2, #user3 {
+	position: absolute;
+	right: 30%;
+	top: 100%;
+}
+
+#user2{
+	left: 20%;
+}
+
+#user3{
+	right: 15%;
+}
 

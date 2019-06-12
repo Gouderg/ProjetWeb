@@ -35,20 +35,20 @@
 	</header>
 
 
-	<form method="post" id="saisie">
+	<div id="saisie">
 		Votre recherche : 
 		<select id="type">
-			<option id="Appartement">Appartement</option>
-			<option id="Maison">Maison</option>
+			<option value="appartement">Appartement</option>
+			<option value="maison">Maison</option>
 		</select>
 		à
 		<select id="ville">
-			<option id="brest">Brest</option>
-			<option id="rennes">Rennes</option>
+			<option value="brest">Brest</option>
+			<option value="rennes">Rennes</option>
 		</select>
 	
-		<button id="recherche">Rechercher</button>
-	</form>
+		<button id="recherche" onclick="temp()">Rechercher</button>
+	</div>
 
 	
 	
