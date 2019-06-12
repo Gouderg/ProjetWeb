@@ -1,18 +1,26 @@
 body {
 	background-color: white;
 	font-family: Arial, Helvetica, sans-serif;
+	min-height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
 }
 
-html {
-	height: 100%
-}
+html {height: 100%;}
 
 /*Header*/
 
-header, footer {
+header {
 	background-color: #282828;
 	position: relative;
+}
 
+footer {
+	background-color: #282828;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 #menu {
@@ -59,7 +67,7 @@ div.dropdown-content {
     position: absolute;
     background-color: #6ACA6B; ;
     min-width: 160px;
-    top: 50px;
+    top: 10%;
     z-index: 1;
     padding: 1em;
 }
@@ -119,9 +127,7 @@ p#Contactfoot {
 	top: 55%;
 }
 
-#contenu{
- 	height: 500px;
- }
+
 
 /*Index*/
 
@@ -129,7 +135,14 @@ img.photo {
 	width: 20%;
 	border-radius: 0.2%;
 	border: solid 1px #6ACA6B;
+	margin-left: 2%
 }
+
+tr > * {
+	border-bottom: solid 1px black;
+	border-right: solid 1px black;
+}
+
 
 div#saisie {
 	background-color: #6ACA6B;
@@ -268,15 +281,12 @@ p#interesser {
   to {opacity: 1}
 }
 
-/*contact*/
+/*contact.html*/
 #infosperso {
 	position: absolute;
 	right: 20%;
 	top: 30%;
 }
-
-
-
 #content {
 	display: flex;
 	position: relative;
@@ -284,91 +294,57 @@ p#interesser {
 	min-height: 80vh;
 }
 
-#content > * {
-	flex:1;
-}
+#content > * {flex:1;}
 
-#content .col {
-	padding: 10px;
-
-}
+#content .col {padding: 10px;}
 
 #content .col + .col:before {
-content:"";
-width: 1px;
-height:300px;
-background-color:black;
-display: block;
-position:absolute;
-margin-left:-10px;
-top:50%;
-transform: translate(0,-50%);
+	content: "";
+	width: 1px;
+	height: 300px;
+	background-color: black;
+	display: block;
+	position: absolute;
+	margin-left: -10px;
+	top: 50%;
+	transform: translate(0,-50%);
 }
 
 /* Envoie Mail */
 
-#positiontitre{
+h2#positiontitre, h2#positiontitre2 {
 	position: absolute;
-	top:28%;
-	left: 10%;
+	top:28%;	
 }
+h2#positiontitre{left: 10%;}
+h2#positiontitre2{right: 30%;}
 
-#positiontitre2{
-	position: absolute;
-	top: 28%;
-	right: 30%;
-}
 
-#position1{
+#position1, #position2, #position3, #position4, #position5, #position8{
 	height: 4%;
 	position: absolute;
 	top: 40%;
 	left: 10%;
 	border-radius: 10px;
 }
-#position2{
-	height: 4%;
-	position: absolute;
-	top: 40%;
-	left: 35%;
-	border-radius: 10px;
+#position2 {left: 35%;}
+#position3 {top: 50%;}
+#position5 {top: 60%;}
 
-}
-
-#position3{
-	height: 4%;
-	position: absolute;
-	top: 50%;
-	left: 10%;
-	border-radius: 10px;
-}
-
-#position4{
-	height: 4%;
-	position: absolute;
+#position4 {
 	top: 50%;
 	left: 35%;
-	border-radius: 10px;
-
 }
 
-#position5{
-	height:4%;
-	position: absolute;
-	top:  60%;
-	left: 10%;
-	border-radius: 10px;
-}
-
-#position6{
+#position6 {
 	border-radius: 20px;
 	position: absolute;
 	top: 60%;
 	left : 33%;
 }
 
-#position7{
-	position:  absolute;
+#position7 {
+	position: absolute;
 	color: white;
 	width: 11%;
 	background-color: #B2B2B2;
@@ -377,54 +353,34 @@ transform: translate(0,-50%);
 	border-radius: 10px;
 }
 
-#position8{
+#position8 {
 	border-radius: 20px;
-	height: 4%;
-	position: absolute;
 	top: 70%;
-	left : 10%;
 }
 
-/*Qui sommes-nous*/
+/*agence.html*/
 
-#rond{
+#rond1, #rond2, #rond3 {
 	position:  absolute;
 	top: 50%;
-	left: 45%;
 	border-radius: 50%;
 	width:160px;
-  height:160px;
-	 background:white;
-	 border:2px solid black; 
-}
-#rond2{
-	position:  absolute;
-	top: 50%;
-	left:20%;
-	border-radius: 50%;
-	width:160px;
-  height:160px;
-	 background:white;
-	 border:2px solid black; 
-}
-#rond3{
-	position:  absolute;
-	top: 50%;
-	right: 20%;
-	border-radius: 50%;
-	width:160px;
-  height:160px;
-	 background:white;
-	 border:2px solid black; 
+  	height:160px;
+	background:white;
+	border:2px solid black; 
 }
 
-.avatar{
+#rond1 {left: 45%;}
+#rond2 {left: 20%;}
+#rond3 {right: 20%;}
+
+.avatar {
 	position: absolute;
 	left: 14%;
 	top: 10%;
 	width: 70%;
 	border-radius: 50%;
-	}
+}
 
 
 #user1, #user2, #user3 {
@@ -433,11 +389,8 @@ transform: translate(0,-50%);
 	top: 100%;
 }
 
-#user2{
-	left: 20%;
-}
+#user2{left: 20%;}
+#user3{right: 15%;}
 
-#user3{
-	right: 15%;
-}
+#contenu > p {text-align: center;}
 

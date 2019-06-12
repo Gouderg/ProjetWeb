@@ -1,42 +1,81 @@
+
+//Fonction se lançant en cliquant sur le bouton recherche (index.html)
 $( "#recherche" ).click(function() {
   
+  //On récupère les valeurs sélectionnées par les selects
   var villeSelect = $( "#ville  option:selected" ).val();
   var typeSelect = $( "#type  option:selected" ).val();
+
+  //On les concatène les données dans une autre variable
   var base_url = 'http://ville.api.isen-ouest.fr/immo/list/ville/'+villeSelect+'/type/'+typeSelect;
-  
-  console.log(base_url);
 
-    var response = "";
-    var valresult = '';
-    var photo = '';
+  //Déclaration des variables utilisés dans la récupération des données
+  var response = "";
+  var valresult = '';
+  var photo = '';
 
-    $.ajax({
-        type: "GET", 
-        url: base_url , 
-        //data: form_data,
-        dataType: "json",//set to JSON
-        success: function(response)
-        {
-          
+  //Méthode ajax permettant de récuperer des informations par une requête GET sur une URL sous forme d'un fichier json
+  $.ajax({
+    type: "GET", //Requête GET
+    url: base_url , //URL
+    dataType: "json", //Fichier json
+    //S'il y a succès, on exécute la fonction anonyme ayant pour paramètre le json
+    success: function(response) {
+      
+      //Tant qu'il y a des valeurs, on exécute la fonction    
       jQuery.each( response, function( i, val ) {
 
-        valresult += '<tr><th><img class="photo" src = "http://172.31.0.5/immo/images/' + val.id + '-0.jpg" alt = "maison"></th>'; 
+        //On concatène dans une variable du code html et des valeur du json
+        //Ici, on crée un tableau ayant en première cellule une photo cliquable
+        valresult += '<tr><th><a href="recherchePrecise.html?id='+val.id+'" ><img class="photo" src = "http://172.31.0.5/immo/images/' + val.id + '-0.jpg" alt = "maison"></a></th>';
+        //et en deuxième cellule on rajoute des informations 
         valresult += '<td>Rue : ' + val.numero + '<br> Prix : '+ val.prix + '</td></tr>';
-        
-         
+
       });
-      console.log(photo);     
+
+      //On envoie le tout dans une balise ayant l'attribut .niv1
       $(".niv1").html(valresult);
-      
-        }    
-      
-    }) 
+
+    }     
+  }) 
 });
 
 
 $(document).ready(function() {
        
 })
+
+//Fonction se lançant au chargement de la page ayant le bonne ID (recherchePrecise.html)
+$('#recupID').on('load', function() {
+
+  var nom = window.location.pathname;
+  var id = nom.substring(nom.lastIndexOf('=') + 1);
+  console.log(id);
+  var url = 'http://ville.api.isen-ouest.fr/immo/immo/' + id; 
+
+  var info = '';
+  var titre = '';
+  var photo = '';
+  var description ='';
+
+  $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "json",
+    success: function(info) {
+
+      title = info.type + info. + info. ;//Type Rue NomRue
+      photo = '<img src = "http://172.31.0.5/immo/images/' + info.id + '-0.jpg">';
+
+
+      $(".title").html(title) ;
+      $(".photos").html(photo);
+      $(".description").html(description);
+
+    }
+  })
+
+});
 
 
 
@@ -71,76 +110,81 @@ function showSlides(n) {
   console.log(slideIndex)
 }
 
-//mailto
-function soummision(){
+//Fonction vérifiants si tous les champs du formulaire sont remplis (envoiMail.html)
+function soummision() {
+
   var nom = document.getElementById('position1').value;
   var prenom = document.getElementById('position2').value;
-  var adresse=document.getElementById('position3').value;
-  var ville =document.getElementById('position4').value;
+  var adresse = document.getElementById('position3').value;
+  var ville = document.getElementById('position4').value;
   var mail = document.getElementById('position5').value;
-  var message =document.getElementById('position6').value;
-    if(nom=="")
-    {
-      
-      document.getElementById('position1').focus;
-      return false;
+  var message = document.getElementById('position6').value;
 
-        
-    }
-    if(prenom == ""){
+//Si les champs sont vides alors il prend le focus
+  if(nom == "") {
+     
+    document.getElementById('position1').focus;
+    return false;   
+  }
+
+  if(prenom == "") {
     
-      document.getElementById('position2').focus;
-      return false;
-    }
-    if(adresse == ""){
+    document.getElementById('position2').focus;
+    return false;
+  }
+
+  if(adresse == "") {
     
-      document.getElementById('position3').focus;
-      return false;
-    }
-    if(ville == ""){
+    document.getElementById('position3').focus;
+    return false;
+  }
+
+  if(ville == "") {
     
-      document.getElementById('position4').focus;
-      return false;
-    }
-     if (mail == ""){
+    document.getElementById('position4').focus;
+    return false;
+  }
+
+  if (mail == "") {
       
-      document.getElementById('position5').focus;
-      return false;
-    }
-     if (message == ""){
+    document.getElementById('position5').focus;
+    return false;
+  }
+
+  if (message == "") {
       
-      document.getElementById('position6').focus;
-      return false;
-    }
-    else{
+    document.getElementById('position6').focus;
+    return false;
+  } else {
       return true;
-      }
+    }
 }
 
-//contact
-function soumettre(){
+//Fonction vérifiants si tous les champs du formulaire sont remplis (contact.html)
+function soumettre() {
+
   var nom = document.getElementById('nom').value;
   var prenom = document.getElementById('prenom').value;
   var mail = document.getElementById('mail').value;
-    if(nom=="")
-    {
-      
-      document.getElementById('champs').focus;
-      return false;
 
-        
-    }
-    if(prenom == ""){
+  //Si les champs sont vides alors il prend le focus
+  if(nom == "") {
     
-      document.getElementById('nom').focus;
-      return false;
-    }
-     if (mail == ""){
+    document.getElementById('champs').focus;
+    return false;
+  }
+    
+  if(prenom == "") {
+    
+    document.getElementById('nom').focus;
+    return false;
+  }
+
+  if (mail == "") {
       
-      document.getElementById('mail').focus;
-      return false;
-    }
-    else{
+    document.getElementById('mail').focus;
+    return false;
+  } else {
       return true;
-      }
+    }
 } 
