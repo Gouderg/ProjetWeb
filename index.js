@@ -81,7 +81,7 @@ $(document).ready(function() {
         + info[0].surfaceTerrain + ' mètre carrées' + '<br>  <br><stong> Prix: </strong>'
         + info[0].prix + ' <br> <img  id="image/euro" src="image/euro.png" >';
 
-        button += '<a href="envoiMail.html?id='+info[0].id+'"><p id="interesser">Intéressé?<br>Cliquez ici</p></a>'
+        button += '<a href="envoiMail.html?id='+info[0].id+'" id="interesser">Intéressé?<br>Cliquez ici</a>'
 
         resume += 'Rue : ' + info[0].voie + '<br> Prix : '+ info[0].prix 
         + '<img src="image/euro.png" id="euro" > <br> Surface du Bati : ' 

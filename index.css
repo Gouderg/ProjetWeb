@@ -8,6 +8,12 @@ body {
 }
 
 html {height: 100%;}
+a:visited {color: black;}
+
+a {
+	text-decoration: none;
+	padding: 10px; 
+}
 
 /*Header*/
 
@@ -30,13 +36,6 @@ footer {
 	right: 16%;
 }
 
-#localisation {
-	width: 3%;
-	position: absolute;
-	top: 22%;
-	left: 12%;
-
-}
 #bretagne {
 	position: absolute;
 	top: 20%;
@@ -54,7 +53,7 @@ footer {
 }
 
 
-.dropdown {
+nav {
 	position: absolute;
     display: inline-block;
     right: 20%;
@@ -62,7 +61,7 @@ footer {
     transform: translate(0 ,-50%);
 }
 
-div.dropdown-content {
+ul {
     display: none;
     position: absolute;
     background-color: #6ACA6B; ;
@@ -72,7 +71,7 @@ div.dropdown-content {
     padding: 1em;
 }
 
-div.dropdown:hover .dropdown-content {
+nav:hover ul {
 	display: block;
 	color: #6ACA6B;
 }
@@ -190,14 +189,19 @@ div#slider figure img {
 	100% {left: -400%; }
 }
 
-p#coeur {
+#coeur, .btnInte {
 	background-color: #6ACA6B;
 	font-size: 130%;
 	color: white;
-	display: block;
+	display: inline-block;
 	margin-top: 1em;
 	margin-bottom: 5em;
 	text-align: center;
+	padding: 0%;
+	border-radius: 10px;
+	min-width: 10px;
+	padding: 10px;
+	
 }
 
 h2 {
@@ -313,7 +317,10 @@ div#contenu2 {
 	top: 70%;
 }
 
-div
+#espace {
+	min-height: 90vh;
+}
+
 
 /*agence.html*/
 
@@ -350,4 +357,12 @@ div
 #user3{right: 15%;}
 
 #contenu > p {text-align: center;}
+
+/*mentionLegale.html*/
+
+div#mention{
+	font-style: italic;
+	margin-bottom: 3em;
+}
+div#mention p {padding: 10px;}
 
