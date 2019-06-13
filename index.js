@@ -29,7 +29,7 @@ $( "#recherche" ).click(function() {
         //Ici, on crée un tableau ayant en première cellule une photo cliquable
         valresult += '<tr> <th> <br> <a href="recherchePrecise.html?id='+val.id+'" ><img class="photo" src = "http://172.31.0.5/immo/images/' + val.id + '-0.jpg" alt = "maison"></a></th>';
         //et en deuxième cellule on rajoute des informations 
-        valresult +=  '<td>Rue : ' + val.voie + '<br> Prix : '+ val.prix + '<img src="image/euro.png" id="euro" > <br> Surface du Bati : ' + val.surfaceBati + '<br> T' + val.nbPiece + '</td> </tr> ';
+        valresult +=  '<td>Rue : ' + val.voie + '<br> Prix : '+ val.prix + '<img src="image/euro.png" id="euro" > <br> Surface du Bâti : ' + val.surfaceBati + '<br> T' + val.nbPiece + '</td> </tr> ';
 
       });
 
@@ -75,16 +75,16 @@ $(document).ready(function() {
         photo += '<img id="tailleimage" src="http://172.31.0.5/immo/images/'+info[0].id+'-0.jpg">';
 
         description += ' Adresse : ' + info[0].typeRue + ' '+info[0].voie
-        + '<br> Code postale : '+ info[0].codePostal +' <br> Ville : ' 
-        + info[0].ville + '<br> <br> <stong> Surface du Bati  :</strong> '
-        + info[0].surfaceBati + ' mètre carrées' +'<br> Sufrace Terrain :' 
-        + info[0].surfaceTerrain + ' mètre carrées' + '<br>  <br><stong> Prix: </strong>'
+        + '<br> Code postal : '+ info[0].codePostal +' <br> Ville : ' 
+        + info[0].ville + '<br> <br> <stong> Surface du Bâti  :</strong> '
+        + info[0].surfaceBati + ' mètres carrés' +'<br> Surface Terrain : ' 
+        + info[0].surfaceTerrain + ' mètres carrés' + '<br>  <br><stong> Prix: </strong>'
         + info[0].prix + ' <br> <img  id="image/euro" src="image/euro.png" >';
 
         button += '<a href="envoiMail.html?id='+info[0].id+'" id="interesser">Intéressé?<br>Cliquez ici</a>'
 
         resume += 'Rue : ' + info[0].voie + '<br> Prix : '+ info[0].prix 
-        + '<img src="image/euro.png" id="euro" > <br> Surface du Bati : ' 
+        + '<img src="image/euro.png" id="euro" > <br> Surface du Bâti : ' 
         + info[0].surfaceBati + '<br> T' + info[0].nbPiece;
 
         $(".title").html(titre) ;

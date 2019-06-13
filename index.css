@@ -189,7 +189,7 @@ div#slider figure img {
 	100% {left: -400%; }
 }
 
-#coeur, .btnInte {
+#coeur {
 	background-color: #6ACA6B;
 	font-size: 130%;
 	color: white;
@@ -212,7 +212,7 @@ h2 {
 
 /*recherche precise*/
 
-p#interesser {
+#interesser {
 	color: white;
 	background-color: #6ACA6B;
 	border: solid 2px black;
@@ -273,6 +273,12 @@ h2#positiontitre{
 	left: 10%;
 }
 
+h2#positiontitre2{
+ 	position: absolute;
+	top:35%;	
+	right: 30%;
+}
+
 div#contenu2 {
 	display: flex;
 	flex-direction: row-reverse;
@@ -317,8 +323,10 @@ div#contenu2 {
 	top: 70%;
 }
 
-#espace {
-	min-height: 90vh;
+#placeinforesume{
+	position: absolute;
+	top: 50%;
+	right: 30%;
 }
 
 
