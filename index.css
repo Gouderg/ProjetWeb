@@ -211,74 +211,24 @@ p#interesser {
 	color: white;
 	background-color: #6ACA6B;
 	border: solid 2px black;
+	border-radius: 10px;
 	text-align: center;
 	font-size: 2em;
-	margin: auto;
-	margin-bottom: 2em;
-	margin-top: 2em;
-	padding: 1em;
-	width: 7em;
+	width: 15%;
+	position: absolute;
+	left: 43%;
+	top: 70%;
 }
 
-* {box-sizing:border-box}
-
-
-.slideshow-container { /* Slideshow container */
-  	max-width: 700px;
-  	position: relative;
-  	margin: auto;
+#tailleimage {
+ 		width: 20%;
+ 		position: absolute;
+ 		left: 15%;
 }
-
-
-.mySlide { /* Hide the images by default */
-  	display: none;
-}
-
-.prev, .next { /* Next & previous buttons */
-  	cursor: pointer;
-  	position: absolute;
-  	top: 50%;
-  	width: auto;
-  	margin-top: -22px;
-  	padding: 16px;
-  	color: white;
-  	font-weight: bold;
-  	font-size: 18px;
-  	transition: 0.6s ease;
-  	border-radius: 0 3px 3px 0;
-  	user-select: none;
-}
-
-
-.next { /* Position the "next button" to the right */
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+#place {
+	position: absolute;
+	top: 40%;
+	right: 35%;
 }
 
 /*contact.html*/
@@ -312,12 +262,16 @@ p#interesser {
 
 /* Envoie Mail */
 
-h2#positiontitre, h2#positiontitre2 {
+h2#positiontitre{
 	position: absolute;
 	top:28%;	
+	left: 10%;
 }
-h2#positiontitre{left: 10%;}
-h2#positiontitre2{right: 30%;}
+
+div#contenu2 {
+	display: flex;
+	flex-direction: row-reverse;
+}
 
 
 #position1, #position2, #position3, #position4, #position5, #position8{
@@ -357,6 +311,8 @@ h2#positiontitre2{right: 30%;}
 	border-radius: 20px;
 	top: 70%;
 }
+
+div
 
 /*agence.html*/
 

@@ -46,71 +46,59 @@ $(document).ready(function() {
 });
 
 //Fonction se lançant au chargement de la page ayant le bonne ID (recherchePrecise.html)
-$('#recupID').ready(function() {
+$(document).ready(function() {
 
-  var nom = window.location.href;
-  var id = nom.substring(nom.lastIndexOf('=') + 1);
-  var url = 'http://ville.api.isen-ouest.fr/immo/immo/' + id; 
+  if ($("#recupID").length) {
 
-  var info = '';
-  var titre = '';
-  var photo = '';
-  var description ='';
+    console.log("hello");
+    var nom = window.location.href;
+    console.log(nom);
+    var id = nom.substring(nom.lastIndexOf('=') + 1);
+    var url = 'http://ville.api.isen-ouest.fr/immo/immo/' + id; 
 
-  $.ajax({
-    type: "GET",
-    url: url,
-    dataType: "json",
-    success: function(info) {
+    var info = '';
+    var titre = '';
+    var photo = '';
+    var description ='';
+    var button = '';
+    var resume = '';
 
-      console.log(info[0].id);
+    $.ajax({
+      type: "GET",
+      url: url,
+      dataType: "json",
+      success: function(info) {
 
-      titre += info[0].typeLocal + ': '+info[0].typeRue + ' '+info[0].voie ;//Type Rue NomRue
-      photo += '<img src="http://172.31.0.5/immo/images/'+info[0].id+'-0.jpg">';
+        console.log(info[0].id);
 
-      console.log(titre);
-      console.log(photo);
-      $(".title").html(titre) ;
-      $(".photos").html(photo);
-      $(".description").html(description);
+        titre += info[0].typeLocal + ': '+info[0].typeRue + ' '+info[0].voie ;//Type Rue NomRue
+        photo += '<img id="tailleimage" src="http://172.31.0.5/immo/images/'+info[0].id+'-0.jpg">';
 
-    }
-  })
+        description += ' Adresse : ' + info[0].typeRue + ' '+info[0].voie
+        + '<br> Code postale : '+ info[0].codePostal +' <br> Ville : ' 
+        + info[0].ville + '<br> <br> <stong> Surface du Bati  :</strong> '
+        + info[0].surfaceBati + ' mètre carrées' +'<br> Sufrace Terrain :' 
+        + info[0].surfaceTerrain + ' mètre carrées' + '<br>  <br><stong> Prix: </strong>'
+        + info[0].prix + ' <br> <img  id="image/euro" src="image/euro.png" >';
 
+        button += '<a href="envoiMail.html?id='+info[0].id+'"><p id="interesser">Intéressé?<br>Cliquez ici</p></a>'
+
+        resume += 'Rue : ' + info[0].voie + '<br> Prix : '+ info[0].prix 
+        + '<img src="image/euro.png" id="euro" > <br> Surface du Bati : ' 
+        + info[0].surfaceBati + '<br> T' + info[0].nbPiece;
+
+        $(".title").html(titre) ;
+        $(".photos").html(photo);
+        $(".btnInte").html(button);
+        $(".description").html(description);
+        $(".resume").html(resume);
+
+      }
+    })
+
+  }
 });
 
-
-
-//Code Js pour le swipe dans Recherche précise
-/*var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlide");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  console.log(slideIndex)
-}*/
 
 //Fonction vérifiants si tous les champs du formulaire sont remplis (envoiMail.html)
 function soummision() {
