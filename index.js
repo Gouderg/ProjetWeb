@@ -68,11 +68,14 @@ $(document).ready(function() {
       url: url,
       dataType: "json",
       success: function(info) {
+        
+        var compteur = 0;
+        var id = info[0].id;
 
-        console.log(info[0].id);
+        checkPhoto(id, compteur);
+        
 
         titre += info[0].typeLocal + ': '+info[0].typeRue + ' '+info[0].voie ;//Type Rue NomRue
-        photo += '<img id="tailleimage" src="http://172.31.0.5/immo/images/'+info[0].id+'-0.jpg">';
 
         description += ' Adresse : ' + info[0].typeRue + ' '+info[0].voie
         + '<br> Code postal : '+ info[0].codePostal +' <br> Ville : ' 
@@ -87,8 +90,7 @@ $(document).ready(function() {
         + '<img src="image/euro.png" id="euro" > <br> Surface du Bâti : ' 
         + info[0].surfaceBati + '<br> T' + info[0].nbPiece;
 
-        $(".title").html(titre) ;
-        $(".photos").html(photo);
+        $(".title").html(titre);
         $(".btnInte").html(button);
         $(".description").html(description);
         $(".resume").html(resume);
@@ -98,6 +100,30 @@ $(document).ready(function() {
 
   }
 });
+
+function checkPhoto(id, compteur) {
+
+  var photo = '';
+
+  console.log(compteur);
+  var url = 'http://172.31.0.5/immo/images/'+id+'-'+compteur+'.jpg';
+  console.log(url);
+  $.ajax ({
+    type: "HEAD",
+    url: url,
+    dataType: "jpg",
+    async:false,
+    success: function() {
+      photo = '<img src="http://172.31.0.5/immo/images/'+id+'-'+compteur+'.jpg">'; 
+      $(".caroussel").append(photo);
+      compteur ++;
+      checkPhoto(id, compteur);
+    } 
+
+
+  });
+
+}
 
 
 //Fonction vérifiants si tous les champs du formulaire sont remplis (envoiMail.html)
