@@ -138,10 +138,10 @@ img.photo {
 	margin-left: 2%
 }
 
-tr > * {
-	border-bottom: solid 1px black;
-	border-right: solid 1px black;
-}
+#euro {width: 7%;}
+
+tr > * {border-bottom: dotted 1px black;}
+table {border-collapse: collapse;}
 
 
 div#saisie {
@@ -291,7 +291,7 @@ p#interesser {
 	display: flex;
 	position: relative;
 	flex-direction:row;
-	min-height: 80vh;
+	min-height: 90vh;
 }
 
 #content > * {flex:1;}

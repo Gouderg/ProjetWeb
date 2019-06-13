@@ -27,9 +27,9 @@ $( "#recherche" ).click(function() {
 
         //On concatène dans une variable du code html et des valeur du json
         //Ici, on crée un tableau ayant en première cellule une photo cliquable
-        valresult += '<tr><th><a href="recherchePrecise.html?id='+val.id+'" ><img class="photo" src = "http://172.31.0.5/immo/images/' + val.id + '-0.jpg" alt = "maison"></a></th>';
+        valresult += '<tr> <th> <br> <a href="recherchePrecise.html?id='+val.id+'" ><img class="photo" src = "http://172.31.0.5/immo/images/' + val.id + '-0.jpg" alt = "maison"></a></th>';
         //et en deuxième cellule on rajoute des informations 
-        valresult += '<td>Rue : ' + val.numero + '<br> Prix : '+ val.prix + '</td></tr>';
+        valresult +=  '<td>Rue : ' + val.voie + '<br> Prix : '+ val.prix + '<img src="image/euro.png" id="euro" > <br> Surface du Bati : ' + val.surfaceBati + '<br> T' + val.nbPiece + '</td> </tr> ';
 
       });
 
@@ -43,14 +43,13 @@ $( "#recherche" ).click(function() {
 
 $(document).ready(function() {
        
-})
+});
 
 //Fonction se lançant au chargement de la page ayant le bonne ID (recherchePrecise.html)
-$('#recupID').on('load', function() {
+$('#recupID').ready(function() {
 
-  var nom = window.location.pathname;
+  var nom = window.location.href;
   var id = nom.substring(nom.lastIndexOf('=') + 1);
-  console.log(id);
   var url = 'http://ville.api.isen-ouest.fr/immo/immo/' + id; 
 
   var info = '';
@@ -64,11 +63,14 @@ $('#recupID').on('load', function() {
     dataType: "json",
     success: function(info) {
 
-      title = info.type + info. + info. ;//Type Rue NomRue
-      photo = '<img src = "http://172.31.0.5/immo/images/' + info.id + '-0.jpg">';
+      console.log(info[0].id);
 
+      titre += info[0].typeLocal + ': '+info[0].typeRue + ' '+info[0].voie ;//Type Rue NomRue
+      photo += '<img src="http://172.31.0.5/immo/images/'+info[0].id+'-0.jpg">';
 
-      $(".title").html(title) ;
+      console.log(titre);
+      console.log(photo);
+      $(".title").html(titre) ;
       $(".photos").html(photo);
       $(".description").html(description);
 
@@ -80,7 +82,7 @@ $('#recupID').on('load', function() {
 
 
 //Code Js pour le swipe dans Recherche précise
-var slideIndex = 1;
+/*var slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
@@ -108,7 +110,7 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   console.log(slideIndex)
-}
+}*/
 
 //Fonction vérifiants si tous les champs du formulaire sont remplis (envoiMail.html)
 function soummision() {
