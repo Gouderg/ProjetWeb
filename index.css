@@ -158,7 +158,7 @@ button#recherche, button#contact {
 
 div#slider {
 	width: 80%;
-	max-width: 730px;
+	max-width: 800px;
 	overflow: hidden;
 	margin-right: auto;
 	margin-left: auto;
@@ -166,7 +166,7 @@ div#slider {
 
 div#slider figure {
 	position: relative;
-	width: 400%;
+	width: 500%;
 	margin: 0;
 	padding: 0;
 	font-size: 0;
@@ -174,7 +174,7 @@ div#slider figure {
 }
 
 div#slider figure img {
-	width: 25%;
+	width: 20%;
 	height: auto;
 }
 
@@ -190,13 +190,14 @@ div#slider figure img {
 	100% {left: -400%; }
 }
 
-button#coeur {
+p#coeur {
 	background-color: #6ACA6B;
 	font-size: 130%;
 	color: white;
 	display: block;
-	margin: auto;
 	margin-top: 1em;
+	margin-bottom: 5em;
+	text-align: center;
 }
 
 h2 {
