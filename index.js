@@ -1,6 +1,6 @@
 
 //Fonction se lançant en cliquant sur le bouton recherche (index.html)
-$( "#recherche" ).click(function() {
+$("#recherche").click(function() {
   
   //On récupère les valeurs sélectionnées par les selects
   var villeSelect = $( "#ville  option:selected" ).val();
