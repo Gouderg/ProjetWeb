@@ -40,7 +40,6 @@ footer {
 	position: absolute;
 	top: 20%;
 	width: 9%;
-	
 }
 
 #devise {
@@ -49,7 +48,6 @@ footer {
 	left: 40%;
 	font-style: italic;
 	color: #B2B2B2;
-
 }
 
 
@@ -203,7 +201,6 @@ div#slider figure img {
 	border: solid 1px black;
 	min-width: 10px;
 	padding: 10px;
-	
 }
 
 h2 {
@@ -212,7 +209,7 @@ h2 {
 	font-weight: bold;
 }
 
-/*recherche precise*/
+/*Recherche precise*/
 
 #interesser {
 	color: white;
@@ -226,7 +223,6 @@ h2 {
 	left: 43%;
 	top: 70%;
 	margin-bottom: 5em;
-
 }
 
 #place {
@@ -234,13 +230,12 @@ h2 {
 	top: 50%;
 	right: 10%;
 }
-/*Caroussel*/
+
 div.wrap_car {
 	position: relative;
 	width: 400px;
 	height: 200px;
 	overflow: hidden;
-	
 }
 
 div.wrap_car ul {
@@ -248,7 +243,6 @@ div.wrap_car ul {
 	list-style: none;
 	margin: 0;            
 	animation: 30s slidy2 infinite;
-	
 }
 
 div.wrap_car ul li {
@@ -277,12 +271,13 @@ div.wrap_car ul li img {
 
 
 
-/*contact.html*/
+/*Contact*/
 #infosperso {
 	position: absolute;
 	right: 20%;
 	top: 30%;
 }
+
 #content {
 	display: flex;
 	position: relative;
@@ -308,13 +303,13 @@ div.wrap_car ul li img {
 
 /* Envoie Mail */
 
-h2#positiontitre{
+h2#positiontitre {
 	position: absolute;
 	top:28%;	
 	left: 10%;
 }
 
-h2#positiontitre2{
+h2#positiontitre2 {
  	position: absolute;
 	top:35%;	
 	right: 30%;
@@ -326,14 +321,14 @@ div#contenu2 {
 	right: 10%;
 }
 
-
-#position1, #position2, #position3, #position4, #position5, #position8{
+#position1, #position2, #position3, #position4, #position5, #position8 {
 	height: 4%;
 	position: absolute;
 	top: 40%;
 	left: 10%;
 	border-radius: 10px;
 }
+
 #position2 {left: 35%;}
 #position3 {top: 50%;}
 #position5 {top: 60%;}
@@ -365,7 +360,7 @@ div#contenu2 {
 	top: 70%;
 }
 
-#placeinforesume{
+#placeinforesume {
 	position: absolute;
 	top: 50%;
 	right: 30%;

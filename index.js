@@ -40,11 +40,12 @@ $("#recherche").click(function() {
   }) 
 });
 
-//Fonction se lançant au chargement de la page ayant le bonne ID (recherchePrecise.html)
+//Fonction se lançant au chargement de la page ayant le bonne ID (recherchePrecise.html / envoiMail.html)
 $(document).ready(function() {
 
-  if ($("#recupID").length) {
+  if ($("#recupID").length) { //On exécute le code seulement si l'id est présent et rempli
 
+    //On récupère l'id dans l'URL
     var nom = window.location.href;
     console.log(nom);
     var id = nom.substring(nom.lastIndexOf('=') + 1);
@@ -52,11 +53,11 @@ $(document).ready(function() {
 
     var info = '';
     var titre = '';
-    var photo = '';
     var description ='';
     var button = '';
     var resume = '';
 
+    //Méthode ajax récupérant les infos stockées à l'adresse url
     $.ajax({
       type: "GET",
       url: url,
@@ -66,24 +67,29 @@ $(document).ready(function() {
         var compteur = 0;
         var id = info[0].id;
 
+        //Fonction qui permet de vérifier si la photo existe
         checkPhoto(id, compteur);
         
 
-        titre += info[0].typeLocal + ': '+info[0].typeRue + ' '+info[0].voie ;//Type Rue NomRue
+        titre += info[0].typeLocal + ': '+info[0].typeRue + ' ' + info[0].voie;//Type Rue NomRue
 
-        description += ' Adresse : ' + info[0].typeRue + ' '+info[0].voie
+        //Description du bien rédigée en HTML et stockée dans une variable
+        description += ' Adresse : ' + info[0].typeRue + ' '+info[0].voie 
         + '<br> Code postal : '+ info[0].codePostal +' <br> Ville : ' 
-        + info[0].ville + '<br> <br> <stong> Surface du Bâti  :</strong> '
-        + info[0].surfaceBati + ' mètres carrés' +'<br> Surface Terrain : ' 
+        + info[0].ville + '<br> <br> <stong> Surface du bâti  :</strong> '
+        + info[0].surfaceBati + ' mètres carrés' +'<br> Surface terrain : ' 
         + info[0].surfaceTerrain + ' mètres carrés' + '<br>  <br><stong> Prix: </strong>'
         + info[0].prix + ' <br> <img  id="image/euro" src="image/euro.png" >';
 
+        //Bouton qui renvoie à un lien en passant un id dans son URL
         button += '<a href="envoiMail.html?id='+info[0].id+'" id="interesser">Intéressé?<br>Cliquez ici</a>'
 
+        //Résumé utilisé dans la envoiMail
         resume += 'Rue : ' + info[0].voie + '<br> Prix : '+ info[0].prix 
         + '<img src="image/euro.png" id="euro" > <br> Surface du Bâti : ' 
         + info[0].surfaceBati + '<br> T' + info[0].nbPiece;
 
+        //On réinjecte le tout dans le code HTML à la classe qui correspond
         $(".title").html(titre);
         $(".btnInte").html(button);
         $(".description").html(description);
@@ -92,40 +98,27 @@ $(document).ready(function() {
       }
     })
   }
-
-  if ($(".caroussel").length) {
-    console.log("hello");
-
-    $("#next").click(function() {
-
-      console.log("Bonswar");
-    });
-
-    $("#prev").click(function() {
-
-      console.log("au revoir");
-    });
-
-
-  }
 });
 
+//Fonction qui regarde si la photo choisie existe, elle prend en paramètres l'id du bien et compteur
+//Compteur s'incrémente à chaque appel de la fonction
 function checkPhoto(id, compteur) {
 
   var photo = '';
-
-  console.log(compteur);
   var url = 'http://172.31.0.5/immo/images/'+id+'-'+compteur+'.jpg';
-  console.log(url);
+
+  //Méthode ajax qui récupère la photo à l'adresse voulue
   $.ajax ({
     type: "HEAD",
     url: url,
     dataType: "jpg",
     async:false,
-    success: function() {
+    success: function() { 
+      //Si la photo existe on la concatène dans une variable puis on la réinjecte directement dans le code HTML
       photo = '<li><img src="http://172.31.0.5/immo/images/'+id+'-'+compteur+'.jpg"></li>'; 
-      $(".caroussel").append(photo);
+      $(".carrousel").append(photo);
       compteur ++;
+      //Tant qu'il y a succès de la méthode ajax, on rappelle la fonction
       checkPhoto(id, compteur);
     } 
 

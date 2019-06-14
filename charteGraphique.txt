@@ -2,15 +2,15 @@ Logo : Un logo pour fond foncé(écriture blanche). Un logo pour fond clair(écr
 
 Typographie: Arial, Helvetica, sans-serif
 
-Couleurs principales: Blanc, Noir, #6ACA6B
+Couleurs principales: Blanc, Noir, #6ACA6B, #282828
 
 Taille des titres: h1 à h5 en noir
 
-Bouton: Fond Noir et écritude blanche
+Bouton: Fond Noir et écritude blanche ou fond vert et écriture blanche
 
 Texte: Couleur #6ACA6B avec une opacité de 75%
 
-Photo: normal sans ajout
+Photo: normal sans ajout / bord en #6ACA6B
 
 Header/Footer: couleur en #282828
 
