@@ -40,17 +40,11 @@ $("#recherche").click(function() {
   }) 
 });
 
-
-$(document).ready(function() {
-       
-});
-
 //Fonction se lançant au chargement de la page ayant le bonne ID (recherchePrecise.html)
 $(document).ready(function() {
 
   if ($("#recupID").length) {
 
-    console.log("hello");
     var nom = window.location.href;
     console.log(nom);
     var id = nom.substring(nom.lastIndexOf('=') + 1);
@@ -97,6 +91,21 @@ $(document).ready(function() {
 
       }
     })
+  }
+
+  if ($(".caroussel").length) {
+    console.log("hello");
+
+    $("#next").click(function() {
+
+      console.log("Bonswar");
+    });
+
+    $("#prev").click(function() {
+
+      console.log("au revoir");
+    });
+
 
   }
 });
@@ -114,7 +123,7 @@ function checkPhoto(id, compteur) {
     dataType: "jpg",
     async:false,
     success: function() {
-      photo = '<img src="http://172.31.0.5/immo/images/'+id+'-'+compteur+'.jpg">'; 
+      photo = '<li><img src="http://172.31.0.5/immo/images/'+id+'-'+compteur+'.jpg"></li>'; 
       $(".caroussel").append(photo);
       compteur ++;
       checkPhoto(id, compteur);

@@ -61,7 +61,7 @@ nav {
     transform: translate(0 ,-50%);
 }
 
-ul {
+nav ul {
     display: none;
     position: absolute;
     background-color: #6ACA6B; ;
@@ -134,7 +134,8 @@ img.photo {
 	width: 20%;
 	border-radius: 0.2%;
 	border: solid 1px #6ACA6B;
-	margin-left: 2%
+	margin-left: 2%;
+	object-fit: cover;
 }
 
 #euro {width: 7%;}
@@ -169,7 +170,7 @@ div#slider figure {
 	margin: 0;
 	padding: 0;
 	font-size: 0;
-	animation: 10s slidy infinite;
+	animation: 30s slidy infinite;
 }
 
 div#slider figure img {
@@ -219,21 +220,62 @@ h2 {
 	border: solid 2px black;
 	border-radius: 10px;
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.5em;
 	width: 15%;
 	position: absolute;
 	left: 43%;
 	top: 70%;
+	margin-bottom: 5em;
+
 }
-/*Carousel*/
-
-
 
 #place {
 	position: absolute;
-	top: 40%;
-	right: 35%;
+	top: 50%;
+	right: 10%;
 }
+/*Caroussel*/
+div.wrap_car {
+	position: relative;
+	width: 400px;
+	height: 200px;
+	overflow: hidden;
+	
+}
+
+div.wrap_car ul {
+	position: relative;
+	list-style: none;
+	margin: 0;            
+	animation: 30s slidy2 infinite;
+	
+}
+
+div.wrap_car ul li {
+	position: relative;
+	height: 200px;
+	width: 400px;
+}
+
+div.wrap_car ul li img {
+	
+	object-fit: cover;
+	width: 100%
+}
+
+@keyframes slidy2 {
+	0% {top: 0%; }
+	20% {top: 0%; }
+	25% {top: -100%; }
+	45% {top: -100%; }
+	50% {top: -200%; }
+	70% {top: -200%; }
+	75% {top: -300%; }
+	95% {top: -300%; }
+	100% {top: -400%; }
+}
+
+
 
 /*contact.html*/
 #infosperso {
@@ -281,6 +323,7 @@ h2#positiontitre2{
 div#contenu2 {
 	display: flex;
 	flex-direction: row-reverse;
+	right: 10%;
 }
 
 
